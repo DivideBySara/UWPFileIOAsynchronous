@@ -7,8 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="tBlock" FontSize="100" Text="Starter text"/>
-        <Button x:Name="btn" Click="btn_Click" FontSize="100" Content="Button"/>
-    </Grid>
+    <StackPanel x:Name="sp" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- Read text from a file-->
+        <!--<TextBlock x:Name="tBlock" FontSize="100" Text="Starter text" TextWrapping="Wrap"/>
+        <Button x:Name="btn" Click="btn_Click" FontSize="100" Content="Button"/>-->
+
+        <Button x:Name="btn2" Click="btn2_Click" FontSize="100" Content="Choose your picture folder" />
+        <Button x:Name="btn3" Click="btn3_Click" FontSize="100" Content="Cancel Picture Load" Margin="10"/>
+        <Image x:Name="picture"/>
+    </StackPanel>
 </Page>
