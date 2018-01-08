@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,15 @@ namespace UWPFileIOAsynchronous
         public MainPage()
         {
             this.InitializeComponent();
+            
+        }
+
+        private async void btn_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            StorageFile file = await folder.GetFileAsync("help.txt");
+            string text = await FileIO.ReadTextAsync(file);
+            tBlock.Text = text;
         }
     }
 }
